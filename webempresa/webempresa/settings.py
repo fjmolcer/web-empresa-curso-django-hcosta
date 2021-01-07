@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'services.apps.ServicesConfig',
     'social.apps.SocialConfig',
-    
 ]
 
 MIDDLEWARE = [
@@ -141,7 +140,9 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Custom',
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['NumberedList', 'BulletedList', '-',
+             'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
+             'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
         ]
     }

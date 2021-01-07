@@ -9,9 +9,9 @@ def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(data=request.POST)
         if contact_form.is_valid():
-            name = request.POST.get('name','')
-            email = request.POST.get('email','')
-            content = request.POST.get('content','')
+            name = request.POST.get('name', '')
+            email = request.POST.get('email', '')
+            content = request.POST.get('content', '')
             #Enviamos el correo y redireccionamos
             email = EmailMessage(
                 "La caffettiera: nuevo mensaje de contacto",
@@ -23,10 +23,11 @@ def contact(request):
 
             try:
                 email.send() 
-                #Todo ha ido bien, redireccionamos a OK
+                # Todo ha ido bien, redireccionamos a OK
                 return redirect(reverse('contact')+'?ok')
             except:
                 #Algo ha ido mal, redireccionamos a FAIL
                 return redirect(reverse('contact')+'?fail')
 
     return render (request, 'contact/contact.html', {'form' : contact_form})
+    
